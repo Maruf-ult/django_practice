@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        nav { background-color: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        .container { padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to My Django Website</h1>
+        <p>This is the homepage of your Django app!</p>
+    </div>
+    <h2>Author :   {{author}}</h2>
+    <h2>Author :   {{age}}</h2>
+    <h2>{{lst}} </h2>
+
+    {% if age >= 20 %}
+    <h4>i can drive</h4>
+    {% elif age >= 10 and age <= 19 %}
+    <h4>yoi will not get</h4>
+    {% else %}
+    <h4>you are a child</h4>
+    {% endif %}
+ {{lst}}
+ <h1>{{lst | join:" - "}}</h1>
+ <h1>{{birthday | date:" D d M Y" }}</h1>
+ <h1>{{ val | default:"an empty string"}}</h1>
+ <h1>{{"python is Fun " | cut:" "}}</h1>
+ <h1>{{"python is fun and python is fun" | truncatechars:7}}</h1>
+ <h1>{{"python is fun and python is fun" | truncatewords:4}}</h1>
+<h1>{{ val | length}}</h1>
+
+    {% for i in courses %}
+    <h3>{{i.id}} {{i.name}} {{i.fee}}</h3>
+    {% endfor %}
+
+
+</body>
+</html>
